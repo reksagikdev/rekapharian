@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>REKAP HARIAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#07111f,#0f172a,#111827);
+    color:#e5e7eb;
+    padding:30px;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:30px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    font-size:30px;
+    font-weight:700;
+    color:#ffffff;
+    margin-bottom:8px;
+}
+
+.title-logo{
+    width:58px;
+    height:58px;
+}
+
+.title-line{
+    width:900px;
+    height:2px;
+    margin:12px auto 28px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8,#2563eb);
+	margin-top:10px;
+}
+
+.top{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+margin-bottom:30px;
+font-weight:600;
+}
+
+.top input{
+    width:180px;
+}
+
+.section-title{
+    font-size:18px;
+    font-weight:700;
+    margin:25px 0 15px;
+    color:#1b3f72;
+    border-bottom:2px solid #dce6f5;
+    padding-bottom:8px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:180px 340px;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.row label{
+    font-weight:600;
+}
+
+input{
+    width:180px;
+    height:36px;
+    border:1px solid #94a3b8;
+    border-radius:8px;
+    padding:0 12px;
+    font-size:14px;
+	font-weight:600;
+}
+
+input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+    outline:none;
+}
+
+.group{
+    margin-top:24px;
+    padding:22px;
+    border-radius:18px;
+    background:#182233;
+    border:1px solid rgba(255,255,255,.06);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.03),
+        0 10px 30px rgba(0,0,0,.25);
+}
+
+.group h3{
+    color:#fff;
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:16px;
+    padding-bottom:10px;
+    
+}
+
+.button-area{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:35px;
+}
+
+button{
+    min-width:170px;
+    height:45px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+.copy{
+    background:#2563eb;
+    color:#fff;
+}
+
+.reset{
+    background:#dc2626;
+    color:#fff;
+}
+
+.copy:hover{
+    background:#1d4ed8;
+}
+
+.reset:hover{
+    background:#b91c1c;
+}
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:#777;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+.row{
+    display:grid;
+    grid-template-columns:220px 340px;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.row label{
+    font-weight:600;
+    color:#334155;
+    font-size:14px;
+}
+
+input{
+width:100%;
+}
+
+}
+
+.cashback-box{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.cashback-date{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.cashback-box input[type="date"]{
+    width:170px;
+}
+
+.cashback-box input[type="text"]{
+    width:120px;
+    min-width:120px;
+    max-width:220px;
+}
+
+.cashback-box span{
+    font-weight:600;
+}
+
+.cashback-box{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.cashback-box select{
+    width:360px;
+    height:38px;
+    border:2px solid #2d3748;
+    border-radius:8px;
+    padding:0 12px;
+    font-size:15px;
+    background:#fff;
+	font-weight:600;
+}
+
+.cashback-date{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.cashback-date input[type="date"]{
+    width:170px;
+}
+
+.cashback-box input[type="text"]{
+    width:180px;
+}
+
+.cashback-box span{
+    font-weight:600;
+}
+
+.bonus-mingguan{
+    margin-top:20px;
+}
+
+.bonus-container{
+    display:flex;
+    gap:200px;
+}
+
+.bonus-container .cashback-box{
+    width:50%;
+}
+
+
+@media(max-width:700px){
+
+    .bonus-container{
+        flex-direction:column;
+    }
+
+    .bonus-container .cashback-box{
+        width:100%;
+    }
+
+}
+
+.group hr{
+    border:0;
+    border-top:1px solid rgba(255,255,255,.12);
+    margin:18px 0;
+}
+
+.green-dot{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#22c55e;
+    margin-right:10px;
+    box-shadow:0 0 8px rgba(34,197,94,.6);
+    vertical-align:middle;
+}
+
+.footer{
+    margin-top:14px;
+
+    display:block;
+    width:fit-content;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    font-size:9px;
+
+    font-weight:600;
+    letter-spacing:0.6px;
+
+    color:rgba(255,255,255,0.9);
+
+    padding:2px 6px;   
+
+    border-radius:6px;
+
+    border:1px solid rgba(96,165,250,0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+	text-shadow:
+    0 1px 2px rgba(0,0,0,0.8),
+    0 0 8px rgba(255,255,255,0.15);
+}
+
+.button-area{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.sub-box{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:18px;
+}
+
+.sub-box h3{
+    margin:0 0 14px;
+    padding:0;
+}
+
+.sub-box .row{
+    grid-template-columns:110px 220px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="title">
+	<img src="bg/gambar6.png" alt="Logo" class="title-logo">
+        REKAP HARIAN MINITOTO
+    </div>
+	<div class="title-line"></div>
+
+
+
+<div class="top">
+
+<label>Tanggal :</label>
+
+<input
+type="date"
+id="tanggal"
+onchange="updateTanggal()">
+
+</div>
+
+<div class="group">
+
+<h3>📊 REKAP TANGGAL <span class="tgl"></span></h3>
+
+<div class="row">
+<label>MEMBER AKTIF :</label>
+<input type="text" id="member">
+</div>
+
+<div class="row">
+<label>TURNOVER :</label>
+<input type="text" id="turnover">
+</div>
+
+<div class="row">
+<label>REPORT DEPO :</label>
+<input type="text" id="reportDepo">
+</div>
+
+<div class="row">
+<label>REPORT WD :</label>
+<input type="text" id="reportWd">
+</div>
+
+<div class="row">
+<label>REGIS :</label>
+<input type="text" id="regis">
+</div>
+
+<div class="row">
+<label>REG DEPO :</label>
+<input type="text" id="regDepo">
+</div>
+
+<div class="row">
+<label>TRX :</label>
+<input type="text" id="trx">
+</div>
+
+<div class="row">
+<label>BONUS HARIAN :</label>
+<input type="text" id="bonusHarian">
+</div>
+
+<div class="row bonus-mingguan">
+
+<label>BONUS MINGGUAN :</label>
+
+<div class="bonus-container">
+
+    <div class="cashback-box">
+
+        <select id="jenisBonus">
+            <option value="">-- Pilih Bonus --</option>
+            <option>BONUS ROLLINGAN SLOT GAME + LIVE GAME</option>
+            <option>BONUS CASHBACK LIVE GAME</option>
+            <option>BONUS REFFERAL SLOT GAME + LIVE GAME</option>
+            <option>BONUS CASHBACK SPORT GAME</option>
+            <option>BONUS CASHBACK PRAGMATIC PLAY</option>
+            <option>BONUS CASHBACK SLOT GAME</option>
+        </select>
+
+        <div class="cashback-date">
+
+            <input type="date" id="cashbackAwal" onchange="updatePeriode()">
+
+            <span>s/d</span>
+
+            <input type="date" id="cashbackAkhir" onchange="updatePeriode()">
+
+        </div>
+
+        <input type="text" id="cashback" placeholder="Nominal">
+
+    </div>
+
+
+    <!-- BONUS MINGGUAN 2 -->
+
+    <div class="cashback-box">
+
+        <select id="jenisBonus2">
+            <option value="">-- Pilih Bonus --</option>
+            <option>BONUS ROLLINGAN SLOT GAME + LIVE GAME</option>
+            <option>BONUS CASHBACK LIVE GAME</option>
+            <option>BONUS REFFERAL SLOT GAME + LIVE GAME</option>
+            <option>BONUS CASHBACK SPORT GAME</option>
+            <option>BONUS CASHBACK PRAGMATIC PLAY</option>
+            <option>BONUS CASHBACK SLOT GAME</option>
+        </select>
+
+        <div class="cashback-date">
+
+            <input type="date" id="cashbackAwal2" onchange="updatePeriode2()">
+
+            <span>s/d</span>
+
+            <input type="date" id="cashbackAkhir2" onchange="updatePeriode2()">
+
+        </div>
+
+        <input type="text" id="cashback2" placeholder="Nominal">
+
+    </div>
+
+
+</div>
+
+</div>
+
+<div class="button-area">
+
+<button class="copy" onclick="copyRekap1(this)">
+📋 COPY REKAP
+</button>
+
+<button class="reset" onclick="resetRekap()">
+🗑 RESET
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= DEPO PGA ================= -->
+
+<div class="group">
+
+<div class="sub-box">
+    <h3>🟢 DEPO PGA TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="depoPgaTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="depoPgaTrx">
+    </div>
+</div>
+
+<div class="sub-box">
+    <h3>🟢 WD PGA TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="wdPgaTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="wdPgaTrx">
+    </div>
+</div>
+
+<div class="sub-box">
+    <h3>🟢 PENCAIRAN DANA PGA TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="cairTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="cairTrx">
+    </div>
+</div>
+
+
+<div class="button-area">
+
+<button class="copy" onclick="copyPga(this)">
+📋 COPY REKAP
+</button>
+
+<button class="reset" onclick="resetPga()">
+🗑 RESET
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= PAYDIA ================= -->
+
+<div class="group">
+
+<div class="sub-box">
+    <h3>🟢 DEPO QRIS PAYDIA (PRN) TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="paydiaTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="paydiaTrx">
+    </div>
+</div>
+
+<div class="sub-box">
+    <h3>🟢 DEPO QRIS NETZME TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="netzmeTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="netzmeTrx">
+    </div>
+</div>
+
+<div class="sub-box">
+    <h3>🟢 DEPO QRIS VANSON TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="vansonTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="vansonTrx">
+    </div>
+</div>
+
+<div class="sub-box">
+    <h3>🟢 DEPO QRIS INACASH TANGGAL <span class="tgl"></span></h3>
+
+    <div class="row">
+        <label>TOTAL :</label>
+        <input type="text" id="inacashTotal">
+    </div>
+
+    <div class="row">
+        <label>TRX :</label>
+        <input type="text" id="inacashTrx">
+    </div>
+</div>
+
+
+<div class="button-area">
+
+<button class="copy" onclick="copyQris(this)">
+📋 COPY REKAP
+</button>
+
+<button class="reset" onclick="resetQris()">
+🗑 RESET
+</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+© 2026 | BY YOGIK
+
+</div>
+
+</div>
+
+<script>
+
+let periodeCashback="";
+let periodeCashback2="";
+
+// ========================
+// FORMAT TANGGAL
+// ========================
+
+function updateTanggal(){
+
+    const value = document.getElementById("tanggal").value;
+
+    if(!value) return;
+
+    const bulan=[
+        "JANUARI","FEBRUARI","MARET","APRIL",
+        "MEI","JUNI","JULI","AGUSTUS",
+        "SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"
+    ];
+
+    const d=new Date(value);
+
+    const hasil=
+    d.getDate()+" "+
+    bulan[d.getMonth()]+" "+
+    d.getFullYear();
+
+    document.querySelectorAll(".tgl").forEach(el=>{
+        el.textContent=hasil;
+    });
+
+}
+
+
+
+// ========================
+// FORMAT NOMINAL
+// ========================
+
+// ========================
+// FORMAT SEMUA INPUT NOMINAL
+// ========================
+
+document.querySelectorAll("input[type='text']").forEach(input=>{
+
+input.addEventListener("input",function(){
+
+let angka = this.value.replace(/\D/g,"");
+
+if(angka==""){
+    this.value="";
+    return;
+}
+
+this.value = parseInt(angka).toLocaleString("en-US");
+
+});
+
+});
+
+// ========================
+// COPY
+// ========================
+
+function tombolCopy(btn){
+
+btn.innerHTML="✅ COPIED";
+
+setTimeout(()=>{
+btn.innerHTML="📋 COPY REKAP";
+},2000);
+
+}
+
+function copyText(text){
+
+    const textarea = document.createElement("textarea");
+
+    textarea.value = text;
+
+    document.body.appendChild(textarea);
+
+    textarea.select();
+
+    document.execCommand("copy");
+
+    textarea.remove();
+
+}
+
+// COPY REKAP TANGGAL
+
+function copyRekap1(btn){
+
+let txt="";
+
+const member = document.getElementById("member");
+const turnover = document.getElementById("turnover");
+const reportDepo = document.getElementById("reportDepo");
+const reportWd = document.getElementById("reportWd");
+const regis = document.getElementById("regis");
+const regDepo = document.getElementById("regDepo");
+const trx = document.getElementById("trx");
+const bonusHarian = document.getElementById("bonusHarian");
+
+const jenisBonus = document.getElementById("jenisBonus");
+const cashback = document.getElementById("cashback");
+
+const jenisBonus2 = document.getElementById("jenisBonus2");
+const cashback2 = document.getElementById("cashback2");
+
+// HEADER TANGGAL
+let tanggalText = document.querySelector(".tgl").innerText;
+
+
+// DATA UTAMA
+
+let utama = "";
+
+
+if(member.value){
+utama += `MEMBER AKTIF : ${member.value}\n`;
+}
+
+if(turnover.value){
+utama += `TURNOVER : ${turnover.value}\n`;
+}
+
+if(reportDepo.value){
+utama += `REPORT DEPO : ${reportDepo.value}\n`;
+}
+
+if(reportWd.value){
+utama += `REPORT WD : ${reportWd.value}\n`;
+}
+
+if(regis.value){
+utama += `REGIS : ${regis.value}\n`;
+}
+
+if(regDepo.value){
+utama += `REG DEPO : ${regDepo.value}\n`;
+}
+
+if(trx.value){
+utama += `TRX : ${trx.value}\n`;
+}
+
+if(bonusHarian.value){
+utama += `BONUS HARIAN : ${bonusHarian.value}\n`;
+}
+
+
+if(utama){
+
+txt += `
+REKAP TANGGAL ${tanggalText}
+
+${utama}`;
+
+}
+
+
+// BONUS MINGGUAN 1
+
+if(jenisBonus.value || cashback.value){
+
+txt += `\n${jenisBonus.value}`;
+
+if(periodeCashback){
+txt += ` PERIODE ${periodeCashback}`;
+}
+
+if(cashback.value){
+txt += ` : ${cashback.value}`;
+}
+
+}
+
+
+// BONUS MINGGUAN 2
+
+if(jenisBonus2.value || cashback2.value){
+
+txt += `\n${jenisBonus2.value}`;
+
+if(periodeCashback2){
+txt += ` PERIODE ${periodeCashback2}`;
+}
+
+if(cashback2.value){
+txt += ` : ${cashback2.value}`;
+}
+
+}
+
+navigator.clipboard.writeText(txt.trim());
+
+tombolCopy(btn);
+
+}
+
+// COPY PGA
+
+function copyPga(btn){
+
+let txt="";
+
+
+let depoTotal = depoPgaTotal.value;
+let depoTrx = depoPgaTrx.value;
+
+
+if(depoTotal || depoTrx){
+
+txt += `
+DEPO PGA TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(depoTotal){
+    txt += `
+TOTAL : ${depoTotal}`;
+}
+
+if(depoTrx){
+    txt += `
+TRX : ${depoTrx}`;
+}
+
+txt += "\n\n";
+
+}
+
+
+
+let wdTotal = wdPgaTotal.value;
+let wdTrx = wdPgaTrx.value;
+
+
+if(wdTotal || wdTrx){
+
+txt += `
+WD PGA TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(wdTotal){
+    txt += `
+TOTAL : ${wdTotal}`;
+}
+
+if(wdTrx){
+    txt += `
+TRX : ${wdTrx}`;
+}
+
+txt += "\n\n";
+
+}
+
+
+
+
+let cairTotalValue = cairTotal.value;
+let cairTrxValue = cairTrx.value;
+
+
+if(cairTotalValue || cairTrxValue){
+
+txt += `
+PENCAIRAN DANA PGA TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(cairTotalValue){
+    txt += `
+TOTAL : ${cairTotalValue}`;
+}
+
+if(cairTrxValue){
+    txt += `
+TRX : ${cairTrxValue}`;
+}
+
+}
+
+
+
+copyText(txt.trim());
+
+tombolCopy(btn);
+}
+
+// COPY QRIS
+
+function copyQris(btn){
+
+let txt="";
+
+
+// PAYDIA
+
+if(paydiaTotal.value || paydiaTrx.value){
+
+txt += `
+DEPO QRIS PAYDIA (PRN) TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(paydiaTotal.value){
+    txt += `
+TOTAL : ${paydiaTotal.value}`;
+}
+
+if(paydiaTrx.value){
+    txt += `
+TRX : ${paydiaTrx.value}`;
+}
+
+txt += "\n\n";
+
+}
+
+
+// NETZME
+
+if(netzmeTotal.value || netzmeTrx.value){
+
+txt += `
+DEPO QRIS NETZME TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(netzmeTotal.value){
+    txt += `
+TOTAL : ${netzmeTotal.value}`;
+}
+
+if(netzmeTrx.value){
+    txt += `
+TRX : ${netzmeTrx.value}`;
+}
+
+txt += "\n\n";
+
+}
+
+
+// VANSON
+
+if(vansonTotal.value || vansonTrx.value){
+
+txt += `
+DEPO QRIS VANSON TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(vansonTotal.value){
+    txt += `
+TOTAL : ${vansonTotal.value}`;
+}
+
+if(vansonTrx.value){
+    txt += `
+TRX : ${vansonTrx.value}`;
+}
+
+txt += "\n\n";
+
+}
+
+
+// INACASH
+
+if(inacashTotal.value || inacashTrx.value){
+
+txt += `
+DEPO QRIS INACASH TANGGAL ${document.querySelector(".tgl").innerText}
+`;
+
+if(inacashTotal.value){
+    txt += `
+TOTAL : ${inacashTotal.value}`;
+}
+
+if(inacashTrx.value){
+    txt += `
+TRX : ${inacashTrx.value}`;
+}
+
+}
+
+
+navigator.clipboard.writeText(txt.trim());
+
+tombolCopy(btn);
+
+}
+
+// ========================
+// RESET
+// ========================
+
+// ========================
+// RESET REKAP
+// ========================
+
+function resetRekap(){
+
+document.getElementById("member").value="";
+document.getElementById("turnover").value="";
+document.getElementById("reportDepo").value="";
+document.getElementById("reportWd").value="";
+document.getElementById("regis").value="";
+document.getElementById("regDepo").value="";
+document.getElementById("trx").value="";
+document.getElementById("bonusHarian").value="";
+
+document.getElementById("jenisBonus").selectedIndex=0;
+document.getElementById("cashbackAwal").value="";
+document.getElementById("cashbackAkhir").value="";
+document.getElementById("cashback").value="";
+
+document.getElementById("jenisBonus2").selectedIndex=0;
+document.getElementById("cashbackAwal2").value="";
+document.getElementById("cashbackAkhir2").value="";
+document.getElementById("cashback2").value="";
+
+periodeCashback="";
+periodeCashback2="";
+
+}
+
+// ========================
+// RESET PGA
+// ========================
+
+function resetPga(){
+
+depoPgaTotal.value="";
+depoPgaTrx.value="";
+
+wdPgaTotal.value="";
+wdPgaTrx.value="";
+
+cairTotal.value="";
+cairTrx.value="";
+
+}
+
+
+
+// ========================
+// RESET QRIS
+// ========================
+
+function resetQris(){
+
+paydiaTotal.value="";
+paydiaTrx.value="";
+
+netzmeTotal.value="";
+netzmeTrx.value="";
+
+vansonTotal.value="";
+vansonTrx.value="";
+
+inacashTotal.value="";
+inacashTrx.value="";
+
+}
+
+// ========================
+// DEFAULT TANGGAL HARI INI
+// ========================
+
+window.onload=function(){
+
+const today=new Date().toISOString().split("T")[0];
+
+document.getElementById("tanggal").value=today;
+
+updateTanggal();
+
+}
+
+
+
+function formatTanggalIndonesia(value){
+
+    if(!value) return "";
+
+    const bulan=[
+        "JANUARI","FEBRUARI","MARET","APRIL",
+        "MEI","JUNI","JULI","AGUSTUS",
+        "SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"
+    ];
+
+    const d=new Date(value);
+
+    return d.getDate()+" "+bulan[d.getMonth()]+" "+d.getFullYear();
+
+}
+
+function updatePeriode(){
+
+    const awal=document.getElementById("cashbackAwal").value;
+    const akhir=document.getElementById("cashbackAkhir").value;
+
+    if(awal && akhir){
+
+        periodeCashback=
+            formatTanggalIndonesia(awal)+
+            " - "+
+            formatTanggalIndonesia(akhir);
+
+    }
+
+}
+
+function updatePeriode2(){
+
+    const awal=document.getElementById("cashbackAwal2").value;
+    const akhir=document.getElementById("cashbackAkhir2").value;
+
+    if(awal && akhir){
+
+        periodeCashback2 =
+            formatTanggalIndonesia(awal)+
+            " - "+
+            formatTanggalIndonesia(akhir);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
