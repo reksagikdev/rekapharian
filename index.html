@@ -308,10 +308,15 @@ width:100%;
     display:inline-block;
     width:12px;
     height:12px;
+    margin-right:8px;
+
+    background:#00b140;          
     border-radius:50%;
-    background:#22c55e;
-    margin-right:10px;
-    box-shadow:0 0 8px rgba(34,197,94,.6);
+
+    box-shadow:
+        0 0 0 2px rgba(0,216,74,.18),
+        0 0 8px rgba(0,216,74,.55);
+
     vertical-align:middle;
 }
 
@@ -400,6 +405,64 @@ width:100%;
     -webkit-backdrop-filter:blur(8px);
 }
 
+.rekap-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:18px;
+    padding:6px 18px;
+
+    background:linear-gradient(135deg,#1e3a8a,#2563eb,#1d4ed8);
+
+    border:1px solid rgba(96,165,250,.45);
+    border-radius:14px;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.25),
+        inset 0 1px 0 rgba(255,255,255,.15);
+
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+}
+
+.rekap-header{
+    position:relative;
+}
+
+.group-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:18px;
+    padding:4px 16px;
+
+    background:linear-gradient(135deg,#1e3a8a,#2563eb,#1d4ed8);
+
+    border:1px solid rgba(96,165,250,.45);
+    border-radius:14px;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.25),
+        inset 0 1px 0 rgba(255,255,255,.15);
+
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+}
+
+.group-logo{
+    width:30px;
+    height:30px;
+	margin-right:10px;
+}
+
 </style>
 </head>
 <body>
@@ -411,7 +474,6 @@ width:100%;
         REKAP HARIAN MINITOTO
     </div>
 	<div class="title-line"></div>
-
 
 
 <div class="top">
@@ -427,7 +489,9 @@ onchange="updateTanggal()">
 
 <div class="group">
 
-<h3>📊 REKAP TANGGAL <span class="tgl"></span></h3>
+<div class="rekap-header">
+    📊 REKAP TANGGAL&nbsp;<span class="tgl"></span>
+</div>
 
 <div class="rekap-inner">
 
@@ -462,8 +526,18 @@ onchange="updateTanggal()">
 </div>
 
 <div class="row">
-<label>TRX :</label>
-<input type="text" id="trx">
+    <label>TRX DEPO :</label>
+    <input type="text" id="trxDepo">
+</div>
+
+<div class="row">
+    <label>TRX WD :</label>
+    <input type="text" id="trxWd">
+</div>
+
+<div class="row">
+    <label>TOTAL TRX :</label>
+    <input type="text" id="totalTrx">
 </div>
 
 <div class="row">
@@ -557,6 +631,11 @@ onchange="updateTanggal()">
 
 <div class="group">
 
+    <div class="group-title">
+    <img src="bg/gambar9.png" class="group-logo">
+    REKAP PGA
+</div>
+
 <div class="sub-box">
     <h3>🟢 DEPO PGA TANGGAL <span class="tgl"></span></h3>
 
@@ -617,6 +696,11 @@ onchange="updateTanggal()">
 <!-- ================= PAYDIA ================= -->
 
 <div class="group">
+
+    <div class="group-title">
+    <img src="bg/gambar9.png" class="group-logo">
+    REKAP QRIS
+</div>
 
 <div class="sub-box">
     <h3>🟢 DEPO QRIS PAYDIA (PRN) TANGGAL <span class="tgl"></span></h3>
@@ -800,7 +884,9 @@ const reportDepo = document.getElementById("reportDepo");
 const reportWd = document.getElementById("reportWd");
 const regis = document.getElementById("regis");
 const regDepo = document.getElementById("regDepo");
-const trx = document.getElementById("trx");
+const trxDepo = document.getElementById("trxDepo");
+const trxWd = document.getElementById("trxWd");
+const totalTrx = document.getElementById("totalTrx");
 const bonusHarian = document.getElementById("bonusHarian");
 
 const jenisBonus = document.getElementById("jenisBonus");
@@ -842,8 +928,16 @@ if(regDepo.value){
 utama += `REG DEPO : ${regDepo.value}\n`;
 }
 
-if(trx.value){
-utama += `TRX : ${trx.value}\n`;
+if(trxDepo.value){
+    utama += `TRX DEPO : ${trxDepo.value}\n`;
+}
+
+if(trxWd.value){
+    utama += `TRX WD : ${trxWd.value}\n`;
+}
+
+if(totalTrx.value){
+    utama += `TOTAL TRX : ${totalTrx.value}\n`;
 }
 
 if(bonusHarian.value){
@@ -956,9 +1050,6 @@ TRX : ${wdTrx}`;
 txt += "\n\n";
 
 }
-
-
-
 
 let cairTotalValue = cairTotal.value;
 let cairTrxValue = cairTrx.value;
@@ -1108,7 +1199,9 @@ document.getElementById("reportDepo").value="";
 document.getElementById("reportWd").value="";
 document.getElementById("regis").value="";
 document.getElementById("regDepo").value="";
-document.getElementById("trx").value="";
+document.getElementById("trxDepo").value="";
+document.getElementById("trxWd").value="";
+document.getElementById("totalTrx").value="";
 document.getElementById("bonusHarian").value="";
 
 document.getElementById("jenisBonus").selectedIndex=0;
@@ -1144,7 +1237,6 @@ cairTrx.value="";
 }
 
 
-
 // ========================
 // RESET QRIS
 // ========================
@@ -1178,7 +1270,6 @@ document.getElementById("tanggal").value=today;
 updateTanggal();
 
 }
-
 
 
 function formatTanggalIndonesia(value){
