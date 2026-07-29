@@ -273,7 +273,11 @@ width:100%;
 }
 
 .bonus-mingguan{
-    margin-top:20px;
+    align-items:flex-start;
+}
+
+.bonus-mingguan label{
+    padding-top:8px;
 }
 
 .bonus-container{
@@ -306,18 +310,20 @@ width:100%;
 
 .green-dot{
     display:inline-block;
-    width:12px;
-    height:12px;
-    margin-right:8px;
+    width:15px;
+    height:15px;
 
-    background:#00b140;          
-    border-radius:50%;
+    margin-right:10px;
+
+    background:linear-gradient(180deg,#00ff6a,#00b83f);
+    border:1px solid #4cff99;
+    border-radius:3px;
 
     box-shadow:
-        0 0 0 2px rgba(0,216,74,.18),
-        0 0 8px rgba(0,216,74,.55);
+        0 0 8px rgba(0,255,106,.45),
+        inset 0 1px 0 rgba(255,255,255,.35);
 
-    vertical-align:middle;
+    vertical-align: -1px;
 }
 
 .footer{
@@ -637,7 +643,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 DEPO PGA TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>DEPO PGA TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -651,7 +657,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 WD PGA TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>WD PGA TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -665,7 +671,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 PENCAIRAN DANA PGA TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>PENCAIRAN DANA PGA TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -703,7 +709,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 DEPO QRIS PAYDIA (PRN) TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>DEPO QRIS PAYDIA (PRN) TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -717,7 +723,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 DEPO QRIS NETZME TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>DEPO QRIS NETZME TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -731,7 +737,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 DEPO QRIS VANSON TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>DEPO QRIS VANSON TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -745,7 +751,7 @@ onchange="updateTanggal()">
 </div>
 
 <div class="sub-box">
-    <h3>🟢 DEPO QRIS INACASH TANGGAL <span class="tgl"></span></h3>
+    <h3><span class="green-dot"></span>DEPO QRIS INACASH TANGGAL <span class="tgl"></span></h3>
 
     <div class="row">
         <label>TOTAL :</label>
@@ -815,11 +821,6 @@ function updateTanggal(){
 
 }
 
-
-
-// ========================
-// FORMAT NOMINAL
-// ========================
 
 // ========================
 // FORMAT SEMUA INPUT NOMINAL
