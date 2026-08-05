@@ -49,15 +49,7 @@ body{
 .title-logo{
     width:58px;
     height:58px;
-}
-
-.title-line{
-    width:900px;
-    height:2px;
-    margin:12px auto 28px;
-    border-radius:50px;
-    background:linear-gradient(90deg,#2563eb,#38bdf8,#2563eb);
-	margin-top:10px;
+	border-radius:10px;
 }
 
 .top{
@@ -126,10 +118,14 @@ input:focus{
         0 10px 30px rgba(0,0,0,.25);
 }
 
+.group + .group{
+    margin-top:35px;
+}
+
 .group h3{
     color:#fff;
     font-size:17px;
-    font-weight:700;
+    font-weight:600;
     margin-bottom:16px;
     padding-bottom:10px;
     
@@ -411,33 +407,39 @@ width:100%;
     -webkit-backdrop-filter:blur(8px);
 }
 
+.rekap-header .tgl{
+    display:inline-flex;
+    transform:translateY(0.5px);
+}
+
 .rekap-header{
     display:flex;
     align-items:center;
     justify-content:center;
+    gap:6px;
 
-    margin-bottom:18px;
-    padding:6px 18px;
+    margin:5px 0 18px;
+    padding:7px 15px;
 
-    background:linear-gradient(135deg,#1e3a8a,#2563eb,#1d4ed8);
+    background:rgba(56,189,248,.18);
 
-    border:1px solid rgba(96,165,250,.45);
-    border-radius:14px;
+    border-top:1px solid rgba(56,189,248,.55);
+    border-bottom:1px solid rgba(56,189,248,.55);
 
-    box-shadow:
-        0 10px 25px rgba(37,99,235,.25),
-        inset 0 1px 0 rgba(255,255,255,.15);
+    border-left:none;
+    border-right:none;
 
     color:#fff;
     font-size:18px;
-    font-weight:700;
+    font-weight:600;
+    letter-spacing:.8px;
+    text-transform:uppercase;
 
-    letter-spacing:.5px;
+    box-shadow:
+        0 0 12px rgba(56,189,248,.25),
+        inset 0 1px 0 rgba(255,255,255,.08);
 }
 
-.rekap-header{
-    position:relative;
-}
 
 .group-title{
     display:flex;
@@ -445,7 +447,7 @@ width:100%;
     justify-content:center;
 
     margin-bottom:18px;
-    padding:4px 16px;
+    padding:5px 16px;
 
     background:linear-gradient(135deg,#1e3a8a,#2563eb,#1d4ed8);
 
@@ -458,7 +460,7 @@ width:100%;
 
     color:#fff;
     font-size:18px;
-    font-weight:700;
+    font-weight:600;
 
     letter-spacing:.5px;
 }
@@ -466,7 +468,109 @@ width:100%;
 .group-logo{
     width:30px;
     height:30px;
-	margin-right:10px;
+    margin-right:3px;
+    object-fit:contain;
+    position:relative;
+    top:-1px;
+	border-radius:10px;
+}
+
+.rekap-table{
+    display:grid;
+    gap:0;
+
+    border:1px solid rgba(56,189,248,.35);
+    border-radius:12px;
+    overflow:hidden;
+
+    box-shadow:
+        0 0 15px rgba(37,99,235,.15),
+        inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.table-3{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.table-4{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+.table-box{
+    background:rgba(8,18,40,.75);
+    border-right:1px solid rgba(56,189,248,.35);
+}
+
+.table-box:last-child{
+    border-right:0;
+}
+
+.table-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:10px;
+
+    background:rgba(56,189,248,.18);
+
+    color:#ffffff;
+
+    font-size:18px;
+    font-weight:600;
+
+    border-bottom:1px solid rgba(56,189,248,.7);
+}
+
+.table-title .green-dot{
+    margin-right:0;
+    flex-shrink:0;
+}
+
+.table-body{
+    padding:14px;
+}
+
+.table-row{
+    margin-bottom:14px;
+}
+
+.table-row label{
+    display:block;
+    font-weight:700;
+    margin-bottom:6px;
+    color:#fff;
+}
+
+.table-row input{
+    width:100%;
+}
+
+.rekap-table .table-row{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-bottom:10px;
+}
+
+.rekap-table .table-row:last-child{
+    margin-bottom:0;
+}
+
+.rekap-table .table-row label{
+    width:55px;
+    flex-shrink:0;
+    margin:0;
+    font-weight:700;
+    color:#fff;
+    white-space:nowrap;
+}
+
+.rekap-table .table-row input{
+    width:100%;
+    min-width:0;
+    flex:1;
 }
 
 </style>
@@ -476,7 +580,7 @@ width:100%;
 <div class="container">
 
 <div class="title">
-	<img src="bg/gambar6.png" alt="Logo" class="title-logo">
+	<img src="bg/gambar5.jpg" alt="Logo" class="title-logo">
         REKAP HARIAN MINITOTO
     </div>
 	<div class="title-line"></div>
@@ -496,7 +600,8 @@ onchange="updateTanggal()">
 <div class="group">
 
 <div class="rekap-header">
-    📊 REKAP TANGGAL&nbsp;<span class="tgl"></span>
+<img src="bg/gambar2.jpg" class="group-logo">
+    REKAP TANGGAL <span class="tgl"></span>
 </div>
 
 <div class="rekap-inner">
@@ -637,131 +742,169 @@ onchange="updateTanggal()">
 
 <div class="group">
 
-    <div class="group-title">
-    <img src="bg/gambar9.png" class="group-logo">
-    REKAP PGA
+    <div class="rekap-header">
+    <img src="bg/gambar8.png" class="group-logo">
+    PGA TANGGAL <span class="tgl"></span>
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>DEPO PGA TANGGAL <span class="tgl"></span></h3>
+    <div class="rekap-table table-3">
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="depoPgaTotal">
-    </div>
-
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="depoPgaTrx">
-    </div>
+        <div class="table-box">
+            <div class="table-title">
+    <span class="green-dot"></span>
+    DEPOSIT PGA
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>WD PGA TANGGAL <span class="tgl"></span></h3>
+            <div class="table-body">
+                <div class="table-row">
+                    <label>Total :</label>
+                    <input type="text" id="depoPgaTotal">
+                </div>
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="wdPgaTotal">
-    </div>
+                <div class="table-row">
+                    <label>Trx :</label>
+                    <input type="text" id="depoPgaTrx">
+                </div>
+            </div>
+        </div>
 
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="wdPgaTrx">
-    </div>
+        <div class="table-box">
+            <div class="table-title">
+    <span class="green-dot"></span>
+    WITHDRAW PGA
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>PENCAIRAN DANA PGA TANGGAL <span class="tgl"></span></h3>
+            <div class="table-body">
+                <div class="table-row">
+                    <label>Total :</label>
+                    <input type="text" id="wdPgaTotal">
+                </div>
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="cairTotal">
-    </div>
+                <div class="table-row">
+                    <label>Trx :</label>
+                    <input type="text" id="wdPgaTrx">
+                </div>
+            </div>
+        </div>
 
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="cairTrx">
-    </div>
+        <div class="table-box">
+            <div class="table-title">
+    <span class="green-dot"></span>
+    PENCAIRAN PGA
 </div>
 
+            <div class="table-body">
+                <div class="table-row">
+                    <label>Total :</label>
+                    <input type="text" id="cairTotal">
+                </div>
 
-<div class="button-area">
+                <div class="table-row">
+                    <label>Trx :</label>
+                    <input type="text" id="cairTrx">
+                </div>
+            </div>
+        </div>
 
-<button class="copy" onclick="copyPga(this)">
-📋 COPY REKAP
-</button>
+    </div>
 
-<button class="reset" onclick="resetPga()">
-🗑 RESET
-</button>
-
-</div>
+    <div class="button-area">
+        <button class="copy" onclick="copyPga(this)">📋 COPY REKAP</button>
+        <button class="reset" onclick="resetPga()">🗑 RESET</button>
+    </div>
 
 </div>
 
 <!-- ================= PAYDIA ================= -->
-
 <div class="group">
 
-    <div class="group-title">
-    <img src="bg/gambar9.png" class="group-logo">
-    REKAP QRIS
+    <div class="rekap-header">
+    <img src="bg/gambar1.jpg" class="group-logo">
+    DEPOSIT QRIS TANGGAL <span class="tgl"></span>
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>DEPO QRIS PAYDIA (PRN) TANGGAL <span class="tgl"></span></h3>
+<div class="rekap-table table-4">
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="paydiaTotal">
-    </div>
-
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="paydiaTrx">
-    </div>
+    <!-- PAYDIA -->
+    <div class="table-box">
+        <div class="table-title">
+    <span class="green-dot"></span>
+    PAYDIA
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>DEPO QRIS NETZME TANGGAL <span class="tgl"></span></h3>
+        <div class="table-body">
+            <div class="table-row">
+                <label>Total :</label>
+                <input type="text" id="paydiaTotal">
+            </div>
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="netzmeTotal">
+            <div class="table-row">
+                <label>Trx :</label>
+                <input type="text" id="paydiaTrx">
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="netzmeTrx">
-    </div>
+    <!-- NETZME -->
+    <div class="table-box">
+       <div class="table-title">
+    <span class="green-dot"></span>
+    NETZME
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>DEPO QRIS VANSON TANGGAL <span class="tgl"></span></h3>
+        <div class="table-body">
+            <div class="table-row">
+                <label>Total :</label>
+                <input type="text" id="netzmeTotal">
+            </div>
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="vansonTotal">
+            <div class="table-row">
+                <label>Trx :</label>
+                <input type="text" id="netzmeTrx">
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="vansonTrx">
-    </div>
+    <!-- VANSON -->
+    <div class="table-box">
+        <div class="table-title">
+    <span class="green-dot"></span>
+    VANSON
 </div>
 
-<div class="sub-box">
-    <h3><span class="green-dot"></span>DEPO QRIS INACASH TANGGAL <span class="tgl"></span></h3>
+        <div class="table-body">
+            <div class="table-row">
+                <label>Total :</label>
+                <input type="text" id="vansonTotal">
+            </div>
 
-    <div class="row">
-        <label>TOTAL :</label>
-        <input type="text" id="inacashTotal">
+            <div class="table-row">
+                <label>Trx :</label>
+                <input type="text" id="vansonTrx">
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <label>TRX :</label>
-        <input type="text" id="inacashTrx">
+    <!-- INACASH -->
+    <div class="table-box">
+        <div class="table-title">
+    <span class="green-dot"></span>
+    INACASH
+</div>
+
+        <div class="table-body">
+            <div class="table-row">
+                <label>Total :</label>
+                <input type="text" id="inacashTotal">
+            </div>
+
+            <div class="table-row">
+                <label>Trx :</label>
+                <input type="text" id="inacashTrx">
+            </div>
+        </div>
     </div>
+
 </div>
 
 
