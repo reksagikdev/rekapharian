@@ -10,6 +10,10 @@
 
 <style>
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -17,78 +21,110 @@
     font-family:'Inter',sans-serif;
 }
 
+
+/* =========================================================
+   BODY
+========================================================= */
+
 body{
-    background: url("bg/gambar3.jpg") center/cover no-repeat fixed;
+    background:url("bg/gambar4.jpg") center/cover no-repeat fixed;
     color:#e5e7eb;
     padding:30px;
+    min-height:100vh;
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container{
+    width:100%;
     max-width:1050px;
     margin:auto;
-    background: url("bg/gambar4.jpg") center/cover no-repeat fixed;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:30px;
+
+    padding:28px;
+
+    background:url("bg/gambar3.jpg") center/cover no-repeat fixed;
+
+    border:1px solid rgba(120,180,220,.18);
+    border-radius:20px;
+
     box-shadow:
-        0 20px 60px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.04);
+        0 25px 70px rgba(0,0,0,.50),
+        inset 0 1px 0 rgba(255,255,255,.05);
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .title{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:14px;
-    font-size:30px;
+
+    gap:12px;
+
+    margin-bottom:12px;
+
+    color:#fff;
+
+    font-size:29px;
     font-weight:700;
-    color:#ffffff;
-    margin-bottom:8px;
+
+    letter-spacing:.4px;
 }
 
 .title-logo{
-    width:58px;
-    height:58px;
-	border-radius:10px;
+    width:52px;
+    height:52px;
+
+    object-fit:contain;
+    border-radius:10px;
 }
 
+
+/* =========================================================
+   TANGGAL
+========================================================= */
+
 .top{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:12px;
-margin-bottom:30px;
-font-weight:600;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+    color:#e5e7eb;
+
+    font-size:14px;
+    font-weight:600;
 }
 
 .top input{
-    width:180px;
+    width:175px;
 }
 
-.section-title{
-    font-size:18px;
-    font-weight:700;
-    margin:25px 0 15px;
-    color:#1b3f72;
-    border-bottom:2px solid #dce6f5;
-    padding-bottom:8px;
-}
 
-.row{
-    display:grid;
-    grid-template-columns:180px 340px;
-    align-items:center;
-    margin-bottom:8px;
-}
+/* =========================================================
+   INPUT UMUM
+========================================================= */
 
-.row label{
-    font-weight:600;
+input,
+select{
+    font-family:'Inter',sans-serif;
+    outline:none;
 }
 
 input{
-    width:180px;
+    width:100%;
     height:36px;
-    padding:0 12px;
+
+    padding:0 11px;
 
     background:#ffffff;
     color:#111827;
@@ -98,325 +134,90 @@ input{
 
     font-size:14px;
     font-weight:600;
+
+    transition:
+        border-color .2s,
+        box-shadow .2s,
+        background .2s;
 }
 
 input:focus{
-    background:#ffffff;
+    background:#fff;
+
     border-color:#38bdf8;
-    box-shadow:0 0 0 3px rgba(56,189,248,.20);
-    outline:none;
+
+    box-shadow:
+        0 0 0 3px rgba(56,189,248,.16);
 }
+
+
+/* =========================================================
+   GROUP
+========================================================= */
 
 .group{
     margin-top:24px;
-    padding:22px;
-    border-radius:18px;
-    background: url("bg/gambar4.jpg") center/cover no-repeat fixed;
-    border:1px solid rgba(255,255,255,.06);
+    padding:20px;
+
+    background:url("bg/gambar3.jpg") center/cover no-repeat fixed;
+
+    border:1px solid rgba(120,180,220,.13);
+    border-radius:16px;
+
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.03),
-        0 10px 30px rgba(0,0,0,.25);
+        0 10px 30px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.03);
 }
 
 .group + .group{
-    margin-top:35px;
-}
-
-.group h3{
-    color:#fff;
-    font-size:17px;
-    font-weight:600;
-    margin-bottom:16px;
-    padding-bottom:10px;
-    
-}
-
-.button-area{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:35px;
-}
-
-button{
-    min-width:170px;
-    height:45px;
-    border-radius:10px;
-    font-size:15px;
-    font-weight:600;
-    transition:.25s;
-}
-
-button:hover{
-    transform:translateY(-2px);
-}
-
-.copy{
-    background:#2563eb;
-    color:#fff;
-}
-
-.reset{
-    background:#dc2626;
-    color:#fff;
-}
-
-.copy:hover{
-    background:#1d4ed8;
-}
-
-.reset:hover{
-    background:#b91c1c;
-}
-
-.footer{
-    text-align:center;
-    margin-top:30px;
-    color:#777;
-    font-size:13px;
-}
-
-@media(max-width:700px){
-
-.row{
-    display:grid;
-    grid-template-columns:220px 340px;
-    align-items:center;
-    margin-bottom:12px;
-}
-
-.row label{
-    font-weight:600;
-    color:#334155;
-    font-size:14px;
-}
-
-input{
-width:100%;
-}
-
-}
-
-.cashback-box{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-}
-
-.cashback-date{
-    display:flex;
-    align-items:center;
-    gap:6px;
-}
-
-.cashback-box input[type="date"]{
-    width:170px;
-}
-
-.cashback-box input[type="text"]{
-    width:120px;
-    min-width:120px;
-    max-width:220px;
-}
-
-.cashback-box span{
-    font-weight:600;
-}
-
-.cashback-box{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.cashback-box select{
-    width:360px;
-    height:38px;
-
-    background:#ffffff;
-    color:#111827;
-
-    border:1px solid #cbd5e1;
-    border-radius:8px;
-
-    padding:0 12px;
-    font-size:15px;
-    font-weight:600;
-}
-
-.cashback-box select:focus{
-    border-color:#38bdf8;
-    box-shadow:0 0 0 3px rgba(56,189,248,.20);
-    outline:none;
-}
-
-.cashback-date{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.cashback-date input[type="date"]{
-    width:170px;
-}
-
-.cashback-box input[type="text"]{
-    width:180px;
-}
-
-.cashback-box span{
-    font-weight:600;
-}
-
-.bonus-mingguan{
-    align-items:flex-start;
-}
-
-.bonus-mingguan label{
-    padding-top:8px;
-}
-
-.bonus-container{
-    display:flex;
-    gap:200px;
-}
-
-.bonus-container .cashback-box{
-    width:50%;
+    margin-top:28px;
 }
 
 
-@media(max-width:700px){
-
-    .bonus-container{
-        flex-direction:column;
-    }
-
-    .bonus-container .cashback-box{
-        width:100%;
-    }
-
-}
-
-.group hr{
-    border:0;
-    border-top:1px solid rgba(255,255,255,.12);
-    margin:18px 0;
-}
-
-.green-dot{
-    display:inline-block;
-    width:15px;
-    height:15px;
-
-    margin-right:10px;
-
-    background:linear-gradient(180deg,#00ff6a,#00b83f);
-    border:1px solid #4cff99;
-    border-radius:3px;
-
-    box-shadow:
-        0 0 8px rgba(0,255,106,.45),
-        inset 0 1px 0 rgba(255,255,255,.35);
-
-    vertical-align: -1px;
-}
-
-.footer{
-    margin-top:14px;
-
-    display:block;
-    width:fit-content;
-
-    margin-left:auto;
-    margin-right:auto;
-
-    font-size:9px;
-
-    font-weight:600;
-    letter-spacing:0.6px;
-
-    color:rgba(255,255,255,0.9);
-
-    padding:2px 6px;   
-
-    border-radius:6px;
-
-    border:1px solid rgba(96,165,250,0.25);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    box-shadow:0 6px 18px rgba(0,0,0,0.2);
-	text-shadow:
-    0 1px 2px rgba(0,0,0,0.8),
-    0 0 8px rgba(255,255,255,0.15);
-}
-
-.button-area{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.12);
-}
-
-.sub-box{
-    margin-bottom:18px;
-    padding:16px;
-
-    background:rgba(15,23,42,.65);
-
-    border:1px solid rgba(56,189,248,.35);
-
-    border-radius:14px;
-
-    box-shadow:
-        0 0 15px rgba(37,99,235,.15),
-        inset 0 1px 0 rgba(255,255,255,.05);
-
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-}
-
-.sub-box h3{
-    margin:0 0 14px;
-    padding:0;
-}
-
-.sub-box .row{
-    grid-template-columns:110px 220px;
-}
-
-.rekap-inner{
-    margin-top:5px;
-     padding:18px 14px 14px;
-
-    border-radius:14px;
-
-    background:rgba(15,23,42,.65);
-
-    border:1px solid rgba(56,189,248,.35);
-
-    box-shadow:
-        0 0 15px rgba(37,99,235,.15),
-        inset 0 1px 0 rgba(255,255,255,.05);
-
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-}
-
-.rekap-header .tgl{
-    display:inline-flex;
-    transform:translateY(0.5px);
-}
+/* =========================================================
+   REKAP HEADER
+========================================================= */
 
 .rekap-header{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:6px;
+
+    gap:7px;
+
+    margin:2px 0 16px;
+    padding:8px 15px;
+
+    background:rgba(56,189,248,.12);
+
+    border-top:1px solid rgba(56,189,248,.45);
+    border-bottom:1px solid rgba(56,189,248,.45);
+
+    color:#fff;
+
+    font-size:17px;
+    font-weight:600;
+
+    letter-spacing:.7px;
+    text-transform:uppercase;
+
+    box-shadow:
+        0 0 14px rgba(56,189,248,.12);
+}
+
+.rekap-header .tgl{
+    display:inline-flex;
+}
+
+
+/* =========================================================
+   GROUP TITLE
+========================================================= */
+
+.group-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     margin:5px 0 18px;
     padding:7px 15px;
@@ -429,8 +230,10 @@ width:100%;
     border-left:none;
     border-right:none;
 
+    border-radius:0;
+
     color:#fff;
-    font-size:18px;
+    font-size:17px;
     font-weight:600;
     letter-spacing:.8px;
     text-transform:uppercase;
@@ -440,705 +243,1829 @@ width:100%;
         inset 0 1px 0 rgba(255,255,255,.08);
 }
 
-
-.group-title{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:18px;
-    padding:5px 16px;
-
-    background:linear-gradient(135deg,#1e3a8a,#2563eb,#1d4ed8);
-
-    border:1px solid rgba(96,165,250,.45);
-    border-radius:14px;
-
-    box-shadow:
-        0 10px 25px rgba(37,99,235,.25),
-        inset 0 1px 0 rgba(255,255,255,.15);
-
-    color:#fff;
-    font-size:18px;
-    font-weight:600;
-
-    letter-spacing:.5px;
-}
-
 .group-logo{
-    width:30px;
-    height:30px;
-    margin-right:3px;
+    width:29px;
+    height:29px;
+
+    margin-right:2px;
+
     object-fit:contain;
+
+    border-radius:8px;
+
     position:relative;
     top:-1px;
-	border-radius:10px;
 }
 
-.rekap-table{
-    display:grid;
-    gap:0;
 
-    border:1px solid rgba(56,189,248,.35);
-    border-radius:12px;
+/* =========================================================
+   GREEN DOT
+========================================================= */
+
+.green-dot{
+    display:inline-block;
+
+    width:14px;
+    height:14px;
+
+    margin-right:8px;
+
+    background:linear-gradient(
+        180deg,
+        #00ff6a,
+        #00b83f
+    );
+
+    border:1px solid #4cff99;
+    border-radius:3px;
+
+    box-shadow:
+        0 0 8px rgba(0,255,106,.4),
+        inset 0 1px 0 rgba(255,255,255,.35);
+
+    vertical-align:-1px;
+}
+
+
+/* =========================================================
+   TABEL PGA / QRIS
+========================================================= */
+
+.pga-table{
+    width:100%;
+
+    background:transparent;
+
+    border:1px solid rgba(80,150,200,.28);
+    border-radius:11px;
+
     overflow:hidden;
 
     box-shadow:
-        0 0 15px rgba(37,99,235,.15),
-        inset 0 1px 0 rgba(255,255,255,.05);
+        0 5px 18px rgba(0,0,0,.22);
 }
 
-.table-3{
-    grid-template-columns:repeat(3,1fr);
+
+/* =========================================================
+   BARIS 4 KOLOM
+========================================================= */
+
+.pga-row{
+    display:grid;
+
+    grid-template-columns:
+        minmax(115px,1fr)
+        minmax(180px,1.25fr)
+        minmax(180px,1.25fr)
+        minmax(150px,1fr);
+
+    align-items:stretch;
+
+    min-height:54px;
+
+    border-bottom:1px solid rgba(100,160,200,.16);
+
+    transition:background .2s;
 }
 
-.table-4{
-    grid-template-columns:repeat(4,minmax(0,1fr));
+.pga-row:last-child{
+    border-bottom:none;
 }
 
-.table-box{
-    background:rgba(8,18,40,.75);
-    border-right:1px solid rgba(56,189,248,.35);
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.pga-head{
+    min-height:48px;
+
+    background:linear-gradient(
+        135deg,
+        #17466b,
+        #23628c
+    );
+
+    color:#fff;
+
+    font-size:17px;
+    font-weight:700;
+
+    letter-spacing:.45px;
 }
 
-.table-box:last-child{
-    border-right:0;
+.pga-head > div{
+    justify-content:center !important;
+    text-align:center !important;
 }
 
-.table-title{
+
+/* =========================================================
+   ISI
+========================================================= */
+
+.pga-row:not(.pga-head){
+    background:rgba(5,12,20,.55);
+
+    color:#e9f0f5;
+
+    font-size:14px;
+}
+
+.pga-row:not(.pga-head):hover{
+    background:rgba(18,42,62,.72);
+}
+
+
+/* =========================================================
+   PEMBATAS KOLOM
+========================================================= */
+
+.pga-row > div{
+    min-width:0;
+    height:100%;
+
     display:flex;
     align-items:center;
+
+    padding:8px 12px;
+
+    border-right:1px solid rgba(100,160,200,.18);
+}
+
+.pga-row > div:last-child{
+    border-right:none;
+}
+
+
+/* =========================================================
+   TANGGAL
+========================================================= */
+
+.pga-date{
     justify-content:center;
-    gap:10px;
 
-    padding:10px;
+    color:#aab7c4;
 
-    background:rgba(56,189,248,.18);
+    font-size:14px;
 
-    color:#ffffff;
-
-    font-size:18px;
-    font-weight:600;
-
-    border-bottom:1px solid rgba(56,189,248,.7);
-}
-
-.table-title .green-dot{
-    margin-right:0;
-    flex-shrink:0;
-}
-
-.table-body{
-    padding:14px;
-}
-
-.table-row{
-    margin-bottom:14px;
-}
-
-.table-row label{
-    display:block;
-    font-weight:700;
-    margin-bottom:6px;
-    color:#fff;
-}
-
-.table-row input{
-    width:100%;
-}
-
-.rekap-table .table-row{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    margin-bottom:10px;
-}
-
-.rekap-table .table-row:last-child{
-    margin-bottom:0;
-}
-
-.rekap-table .table-row label{
-    width:55px;
-    flex-shrink:0;
-    margin:0;
-    font-weight:700;
-    color:#fff;
     white-space:nowrap;
 }
 
-.rekap-table .table-row input{
+
+/* =========================================================
+   NAMA TRANSAKSI
+========================================================= */
+
+.pga-name{
+    color:#fff;
+
+    font-size:14px;
+    font-weight:600;
+
+    line-height:1.35;
+}
+
+
+/* =========================================================
+   INPUT TABEL
+========================================================= */
+
+.pga-input{
+    display:flex;
+    align-items:center;
+}
+
+.pga-input input{
     width:100%;
-    min-width:0;
+    height:34px;
+
+    padding:5px 10px;
+
+    background:rgba(56,189,248,.10);
+	color:#fff;
+
+    border:1px solid rgba(80,150,200,.24);
+    border-radius:7px;
+
+    font-size:14px;
+    font-weight:500;
+
+    text-align:left;
+
+    box-shadow:
+        inset 0 1px 2px rgba(0,0,0,.18);
+}
+
+.pga-input input:hover{
+    border-color:rgba(80,150,200,.45);
+}
+
+.pga-input input:focus{
+    background:#0e1923;
+
+    border-color:#318edb;
+
+    box-shadow:
+        0 0 0 2px rgba(49,142,219,.12);
+}
+
+.pga-input.trx input{
+    text-align:center;
+}
+
+
+/* =========================================================
+   REKAP UTAMA 3 KOLOM
+========================================================= */
+
+.rekap-table-3{
+    width:100%;
+
+    background:transparent;
+
+    border:1px solid rgba(80,150,200,.28);
+    border-radius:11px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.22);
+}
+
+.rekap-table-3 .pga-row{
+    display:grid !important;
+
+    grid-template-columns:
+        180px
+        minmax(0,1fr)
+        minmax(0,1fr) !important;
+
+    width:100% !important;
+}
+
+.rekap-table-3 .pga-row > div{
+    width:auto !important;
+
+    min-width:0 !important;
+
+    max-width:none !important;
+}
+
+.rekap-table-3 .pga-row > div:nth-child(2),
+.rekap-table-3 .pga-row > div:nth-child(3){
+    width:100% !important;
+}
+
+.rekap-table-3 .pga-row > div:nth-child(3) input{
+    width:100% !important;
+
+    min-width:0 !important;
+
+    max-width:none !important;
+}
+
+.rekap-table-3 .pga-head{
+    min-height:48px;
+}
+
+.rekap-table-3 .pga-row:not(.pga-head){
+    min-height:54px;
+}
+
+
+/* =========================================================
+   BONUS MINGGUAN
+========================================================= */
+
+.bonus-mingguan-row{
+    min-height:205px;
+
+    align-items:stretch !important;
+}
+
+
+/* TANGGAL */
+
+.bonus-mingguan-row > .pga-date{
+    align-items:flex-start !important;
+    justify-content:center !important;
+
+    padding-top:17px !important;
+}
+
+
+/* KOLOM TENGAH */
+
+.bonus-mingguan-row > .pga-name{
+    align-items:flex-start !important;
+
+    padding-top:17px !important;
+}
+
+
+/* LABEL BONUS */
+
+.bonus-label-area{
+    position:relative !important;
+
+    display:block !important;
+
+    padding:0 12px !important;
+
+    align-self:stretch !important;
+}
+
+.bonus-title{
+    position:absolute !important;
+
+    top:10px !important;
+    left:12px !important;
+
+    height:36px;
+
+    display:flex !important;
+    align-items:center !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:600;
+
+    line-height:36px;
+}
+
+.bonus-label-area .periode-label{
+    margin-top:35px !important;
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:600;
+
+    line-height:36px;
+}
+
+
+/* =========================================================
+   INPUT BONUS
+========================================================= */
+
+.bonus-input-area{
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+
+    gap:8px;
+
+    padding:10px 12px !important;
+}
+
+.bonus-input-area select{
+    width:100% !important;
+
+    height:36px !important;
+
+    padding:0 10px;
+
+    background:#fff !important;
+    color:#111827 !important;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:8px !important;
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+.bonus-input-area select:focus{
+    border-color:#38bdf8;
+
+    box-shadow:
+        0 0 0 3px rgba(56,189,248,.16);
+
+    outline:none;
+}
+
+.bonus-input-area .bonus-periode{
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:6px;
+
+    width:100%;
+}
+
+.bonus-input-area .bonus-periode input[type="date"]{
     flex:1;
+
+    min-width:0;
+
+    width:auto !important;
+
+    height:36px !important;
+
+    padding:0 8px;
+
+    background:#fff !important;
+    color:#111827 !important;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:8px !important;
+
+    font-size:12px;
+    font-weight:600;
+}
+
+.bonus-input-area .bonus-periode span{
+    flex-shrink:0;
+
+    color:#94a3b8;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.bonus-input-area > input[type="text"]{
+    width:100% !important;
+    height:36px;
+
+    padding:0 11px;
+
+    background:rgba(56,189,248,.10);
+	color:#fff;
+
+    border:1px solid rgba(148,163,184,.22);
+    border-radius:8px;
+
+    outline:none;
+
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    font-weight:600;
+
+    transition:.2s ease;
+}
+
+.bonus-input-area > input[type="text"]:hover{
+    border-color:rgba(96,165,250,.5);
+}
+
+.bonus-input-area > input[type="text"]:focus{
+    border-color:#60a5fa;
+
+    background:rgba(15,23,42,.9);
+
+    box-shadow:
+        0 0 0 3px rgba(59,130,246,.12);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.button-area{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    padding-top:17px;
+
+    border-top:1px solid rgba(255,255,255,.10);
+}
+
+button{
+    min-width:155px;
+    height:42px;
+
+    padding:0 20px;
+
+    border:0;
+    border-radius:9px;
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s,
+        filter .2s,
+        box-shadow .2s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
+}
+
+button:active{
+    transform:translateY(0);
+}
+
+.copy{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    box-shadow:
+        0 6px 18px rgba(37,99,235,.22);
+}
+
+.reset{
+    background:linear-gradient(
+        135deg,
+        #dc2626,
+        #b91c1c
+    );
+
+    box-shadow:
+        0 6px 18px rgba(220,38,38,.18);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    display:block;
+
+    width:fit-content;
+
+    margin:14px auto 0;
+
+    padding:3px 7px;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:9px;
+    font-weight:600;
+
+    letter-spacing:.6px;
+
+    border:1px solid rgba(96,165,250,.20);
+
+    border-radius:6px;
+
+    background:rgba(0,0,0,.12);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    body{
+        padding:15px;
+    }
+
+    .container{
+        padding:18px;
+        border-radius:15px;
+    }
+
+    .title{
+        font-size:23px;
+    }
+
+    .title-logo{
+        width:44px;
+        height:44px;
+    }
+
+    .pga-row{
+        grid-template-columns:
+            105px
+            minmax(150px,1.2fr)
+            minmax(130px,1fr)
+            minmax(100px,.8fr);
+    }
+
+    .pga-row > div{
+        padding:7px 8px;
+    }
+
+    .pga-name{
+        font-size:12px;
+    }
+
+    .pga-date{
+        font-size:11px;
+    }
+
+    .pga-input input{
+        font-size:12px;
+    }
+
+    .rekap-table-3 .pga-row{
+        grid-template-columns:
+            105px
+            minmax(0,1fr)
+            minmax(0,1fr) !important;
+    }
+
+    .bonus-input-area{
+        padding:8px !important;
+    }
+
+    .bonus-input-area select{
+        font-size:11px;
+    }
+
+    .bonus-input-area .bonus-periode input[type="date"]{
+        font-size:10px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    body{
+        padding:8px;
+    }
+
+    .container{
+        padding:12px;
+    }
+
+    .group{
+        padding:10px;
+    }
+
+    .title{
+        font-size:20px;
+        gap:8px;
+    }
+
+    .title-logo{
+        width:38px;
+        height:38px;
+    }
+
+    .pga-row{
+        grid-template-columns:
+            75px
+            minmax(120px,1.15fr)
+            minmax(110px,1fr)
+            minmax(85px,.8fr);
+    }
+
+    .pga-row > div{
+        padding:6px 5px;
+    }
+
+    .pga-head{
+        font-size:10px;
+    }
+
+    .pga-date{
+        font-size:9px;
+    }
+
+    .pga-name{
+        font-size:10px;
+    }
+
+    .pga-input input{
+        height:31px;
+
+        padding:4px 6px;
+
+        font-size:10px;
+    }
+
+    .rekap-table-3 .pga-row{
+        grid-template-columns:
+            75px
+            minmax(0,1fr)
+            minmax(0,1fr) !important;
+    }
+
+    .rekap-table-3 .pga-row > div{
+        padding:6px 7px;
+    }
+
+    .bonus-mingguan-row{
+        min-height:180px;
+    }
+
+    .group-title{
+        font-size:14px;
+    }
+
+    .button-area{
+        gap:8px;
+    }
+
+    button{
+        min-width:135px;
+        height:40px;
+        font-size:13px;
+    }
+}
+
+/* =========================================================
+   TEKS TRANSAKSI — KIRI TAPI SEDIKIT MASUK
+========================================================= */
+
+.rekap-table-3 .pga-name,
+.pga-table .pga-name{
+    justify-content:flex-start;
+    text-align:left;
+
+    padding-left:36px !important;
+}
+
+/* TANGGAL */
+.rekap-table-3 .pga-date,
+.pga-table .pga-date{
+    justify-content:center;
+    text-align:center;
+}
+
+/* INPUT NOMINAL & TRX TETAP TENGAH */
+.rekap-table-3 .pga-input input,
+.pga-table .pga-input input{
+    text-align:center;
+}
+
+/* =========================================================
+   BONUS MINGGUAN — POSISI TEKS
+========================================================= */
+
+.rekap-table-3 .bonus-label-area{
+    justify-content:flex-start !important;
+    text-align:left !important;
+    padding-left:36px !important;
+}
+
+/* BONUS MINGGUAN */
+.rekap-table-3 .bonus-title{
+    left:36px !important;
+    text-align:left !important;
+}
+
+/* PERIODE */
+.rekap-table-3 .periode-label{
+    left:36px !important;
+    text-align:left !important;
 }
 
 </style>
 </head>
+
+
 <body>
 
 <div class="container">
 
+
+<!-- =====================================================
+     JUDUL
+===================================================== -->
+
 <div class="title">
 	<img src="bg/gambar5.jpg" alt="Logo" class="title-logo">
-        REKAP HARIAN MINITOTO
+        REKAP MINITOTO
     </div>
-	<div class="title-line"></div>
 
+
+<!-- =====================================================
+     TANGGAL
+===================================================== -->
 
 <div class="top">
 
-<label>Tanggal :</label>
+    <span>Tanggal :</span>
 
-<input
-type="date"
-id="tanggal"
-onchange="updateTanggal()">
-
-</div>
-
-<div class="group">
-
-<div class="rekap-header">
-<img src="bg/gambar2.jpg" class="group-logo">
-    REKAP TANGGAL <span class="tgl"></span>
-</div>
-
-<div class="rekap-inner">
-
-<div class="row">
-<label>MEMBER AKTIF :</label>
-<input type="text" id="member">
-</div>
-
-<div class="row">
-<label>TURNOVER :</label>
-<input type="text" id="turnover">
-</div>
-
-<div class="row">
-<label>REPORT DEPO :</label>
-<input type="text" id="reportDepo">
-</div>
-
-<div class="row">
-<label>REPORT WD :</label>
-<input type="text" id="reportWd">
-</div>
-
-<div class="row">
-<label>REGIS :</label>
-<input type="text" id="regis">
-</div>
-
-<div class="row">
-<label>REG DEPO :</label>
-<input type="text" id="regDepo">
-</div>
-
-<div class="row">
-    <label>TRX DEPO :</label>
-    <input type="text" id="trxDepo">
-</div>
-
-<div class="row">
-    <label>TRX WD :</label>
-    <input type="text" id="trxWd">
-</div>
-
-<div class="row">
-    <label>TOTAL TRX :</label>
-    <input type="text" id="totalTrx">
-</div>
-
-<div class="row">
-<label>BONUS HARIAN :</label>
-<input type="text" id="bonusHarian">
-</div>
-
-<div class="row bonus-mingguan">
-
-<label>BONUS MINGGUAN :</label>
-
-<div class="bonus-container">
-
-    <div class="cashback-box">
-
-        <select id="jenisBonus">
-            <option value="">-- Pilih Bonus --</option>
-            <option>BONUS ROLLINGAN SLOT GAME + LIVE GAME</option>
-            <option>BONUS CASHBACK LIVE GAME</option>
-            <option>BONUS REFFERAL SLOT GAME + LIVE GAME</option>
-            <option>BONUS CASHBACK SPORT GAME</option>
-            <option>BONUS CASHBACK PRAGMATIC PLAY</option>
-            <option>BONUS CASHBACK SLOT GAME</option>
-        </select>
-
-        <div class="cashback-date">
-
-            <input type="date" id="cashbackAwal" onchange="updatePeriode()">
-
-            <span>s/d</span>
-
-            <input type="date" id="cashbackAkhir" onchange="updatePeriode()">
-
-        </div>
-
-        <input type="text" id="cashback" placeholder="Nominal">
-
-    </div>
-
-
-    <!-- BONUS MINGGUAN 2 -->
-
-    <div class="cashback-box">
-
-        <select id="jenisBonus2">
-            <option value="">-- Pilih Bonus --</option>
-            <option>BONUS ROLLINGAN SLOT GAME + LIVE GAME</option>
-            <option>BONUS CASHBACK LIVE GAME</option>
-            <option>BONUS REFFERAL SLOT GAME + LIVE GAME</option>
-            <option>BONUS CASHBACK SPORT GAME</option>
-            <option>BONUS CASHBACK PRAGMATIC PLAY</option>
-            <option>BONUS CASHBACK SLOT GAME</option>
-        </select>
-
-        <div class="cashback-date">
-
-            <input type="date" id="cashbackAwal2" onchange="updatePeriode2()">
-
-            <span>s/d</span>
-
-            <input type="date" id="cashbackAkhir2" onchange="updatePeriode2()">
-
-        </div>
-
-        <input type="text" id="cashback2" placeholder="Nominal">
-
-    </div>
-
+    <input
+        type="date"
+        id="tanggal"
+        onchange="updateTanggal()"
+    >
 
 </div>
 
-</div>
 
-</div>
-
-<div class="button-area">
-
-<button class="copy" onclick="copyRekap1(this)">
-📋 COPY REKAP
-</button>
-
-<button class="reset" onclick="resetRekap()">
-🗑 RESET
-</button>
-
-</div>
-
-</div>
-
-<!-- ================= DEPO PGA ================= -->
+<!-- =====================================================
+     REKAP UTAMA
+===================================================== -->
 
 <div class="group">
 
     <div class="rekap-header">
-    <img src="bg/gambar8.png" class="group-logo">
-    PGA TANGGAL <span class="tgl"></span>
-</div>
+	<span class="green-dot"></span>
+        <span>TRANSAKSI HARIAN MINITOTO</span>
 
-    <div class="rekap-table table-3">
+       
 
-        <div class="table-box">
-            <div class="table-title">
-    <span class="green-dot"></span>
-    DEPOSIT PGA
-</div>
+    </div>
 
-            <div class="table-body">
-                <div class="table-row">
-                    <label>Total :</label>
-                    <input type="text" id="depoPgaTotal">
-                </div>
 
-                <div class="table-row">
-                    <label>Trx :</label>
-                    <input type="text" id="depoPgaTrx">
-                </div>
-            </div>
+    <div class="rekap-table-3">
+
+
+        <!-- HEADER -->
+
+        <div class="pga-row pga-head">
+
+            <div>TANGGAL</div>
+
+            <div>KETERANGAN</div>
+
+            <div>TOTAL TRANSAKSI</div>
+
         </div>
 
-        <div class="table-box">
-            <div class="table-title">
-    <span class="green-dot"></span>
-    WITHDRAW PGA
-</div>
 
-            <div class="table-body">
-                <div class="table-row">
-                    <label>Total :</label>
-                    <input type="text" id="wdPgaTotal">
-                </div>
+        <!-- MEMBER AKTIF -->
 
-                <div class="table-row">
-                    <label>Trx :</label>
-                    <input type="text" id="wdPgaTrx">
-                </div>
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
             </div>
+
+            <div class="pga-name">
+                MEMBER AKTIF
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="memberAktif">
+            </div>
+
         </div>
 
-        <div class="table-box">
-            <div class="table-title">
-    <span class="green-dot"></span>
-    PENCAIRAN PGA
-</div>
 
-            <div class="table-body">
-                <div class="table-row">
-                    <label>Total :</label>
-                    <input type="text" id="cairTotal">
-                </div>
+        <!-- TURNOVER -->
 
-                <div class="table-row">
-                    <label>Trx :</label>
-                    <input type="text" id="cairTrx">
-                </div>
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
             </div>
+
+            <div class="pga-name">
+                TURNOVER
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="turnover">
+            </div>
+
+        </div>
+
+
+        <!-- REPORT DEPO -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                REPORT DEPO
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="reportDepo">
+            </div>
+
+        </div>
+
+
+        <!-- REPORT WD -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                REPORT WD
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="reportWd">
+            </div>
+
+        </div>
+
+
+        <!-- REGIS -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                REGIS
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="regis">
+            </div>
+
+        </div>
+
+
+        <!-- REG DEPO -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                REG DEPO
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="regDepo">
+            </div>
+
+        </div>
+
+
+        <!-- TRX DEPO -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                TRX DEPO
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="trxDepo">
+            </div>
+
+        </div>
+
+
+        <!-- TRX WD -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                TRX WD
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="trxWd">
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL TRX -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                TOTAL TRX
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="totalTrx">
+            </div>
+
+        </div>
+
+
+        <!-- BONUS HARIAN -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                BONUS HARIAN
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="bonusHarian">
+            </div>
+
+        </div>
+
+
+        <!-- BONUS MINGGUAN -->
+
+        <div class="pga-row bonus-mingguan-row">
+
+            <!-- TANGGAL -->
+
+            <div class="pga-date">
+
+                <span class="tgl"></span>
+
+            </div>
+
+
+            <!-- LABEL -->
+
+            <div class="pga-name bonus-label-area">
+
+                <div class="bonus-title">
+                    BONUS MINGGUAN
+                </div>
+
+                <div class="periode-label">
+                    PERIODE
+                </div>
+
+            </div>
+
+
+            <!-- INPUT BONUS -->
+
+            <div class="pga-input bonus-input-area">
+
+
+                <!-- BONUS 1 -->
+
+                <select id="jenisBonus">
+
+                    <option value="">
+                        -- Pilih Bonus --
+                    </option>
+
+                    <option>
+                        BONUS ROLLINGAN SLOT GAME + LIVE GAME
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK LIVE GAME
+                    </option>
+
+                    <option>
+                        BONUS REFFERAL SLOT GAME + LIVE GAME
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK SPORT GAME
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK PRAGMATIC PLAY
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK SLOT GAME
+                    </option>
+
+                </select>
+
+
+                <div class="bonus-periode">
+
+                    <input
+                        type="date"
+                        id="cashbackAwal"
+                        onchange="updatePeriode()"
+                    >
+
+                    <span>s/d</span>
+
+                    <input
+                        type="date"
+                        id="cashbackAkhir"
+                        onchange="updatePeriode()"
+                    >
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="cashback"
+                    placeholder="Nominal"
+                >
+
+
+                <!-- BONUS 2 -->
+
+                <select id="jenisBonus2">
+
+                    <option value="">
+                        -- Pilih Bonus --
+                    </option>
+
+                    <option>
+                        BONUS ROLLINGAN SLOT GAME + LIVE GAME
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK LIVE GAME
+                    </option>
+
+                    <option>
+                        BONUS REFFERAL SLOT GAME + LIVE GAME
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK SPORT GAME
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK PRAGMATIC PLAY
+                    </option>
+
+                    <option>
+                        BONUS CASHBACK SLOT GAME
+                    </option>
+
+                </select>
+
+
+                <div class="bonus-periode">
+
+                    <input
+                        type="date"
+                        id="cashbackAwal2"
+                        onchange="updatePeriode2()"
+                    >
+
+                    <span>s/d</span>
+
+                    <input
+                        type="date"
+                        id="cashbackAkhir2"
+                        onchange="updatePeriode2()"
+                    >
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="cashback2"
+                    placeholder="Nominal"
+                >
+
+            </div>
+
         </div>
 
     </div>
+
+
+    <!-- BUTTON -->
 
     <div class="button-area">
-        <button class="copy" onclick="copyPga(this)">📋 COPY REKAP</button>
-        <button class="reset" onclick="resetPga()">🗑 RESET</button>
+
+        <button
+            class="copy"
+            onclick="copyRekap1(this)"
+        >
+            📋 COPY
+        </button>
+
+        <button
+            class="reset"
+            onclick="resetRekap()"
+        >
+            🗑 RESET
+        </button>
+
     </div>
 
 </div>
 
-<!-- ================= PAYDIA ================= -->
+
+<!-- =====================================================
+     PGA
+===================================================== -->
+
 <div class="group">
 
-    <div class="rekap-header">
-    <img src="bg/gambar1.jpg" class="group-logo">
-    DEPOSIT QRIS TANGGAL <span class="tgl"></span>
+    <div class="group-title">
+
+        <span class="green-dot"></span>
+
+        REKAP TRANSAKSI PGA
+
+    </div>
+
+
+    <div class="pga-table">
+
+
+        <!-- HEADER -->
+
+        <div class="pga-row pga-head">
+
+            <div>TANGGAL</div>
+
+            <div>KETERANGAN</div>
+
+            <div>TOTAL NOMINAL</div>
+
+            <div>TOTAL TRX</div>
+
+        </div>
+
+
+        <!-- DEPOSIT PGA -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                DEPOSIT PGA
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="depoPgaTotal">
+            </div>
+
+            <div class="pga-input trx">
+                <input type="text" id="depoPgaTrx">
+            </div>
+
+        </div>
+
+
+        <!-- WITHDRAW PGA -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                WITHDRAW PGA
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="wdPgaTotal">
+            </div>
+
+            <div class="pga-input trx">
+                <input type="text" id="wdPgaTrx">
+            </div>
+
+        </div>
+
+
+        <!-- PENCAIRAN PGA -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                PENCAIRAN PGA
+            </div>
+
+            <div class="pga-input">
+                <input type="text" id="cairTotal">
+            </div>
+
+            <div class="pga-input trx">
+                <input type="text" id="cairTrx">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="button-area">
+
+        <button
+            class="copy"
+            onclick="copyPga(this)"
+        >
+            📋 COPY
+        </button>
+
+        <button
+            class="reset"
+            onclick="resetPga()"
+        >
+            🗑 RESET
+        </button>
+
+    </div>
+
 </div>
 
-<div class="rekap-table table-4">
 
-    <!-- PAYDIA -->
-    <div class="table-box">
-        <div class="table-title">
-    <span class="green-dot"></span>
-    PAYDIA
-</div>
+<!-- =====================================================
+     QRIS
+===================================================== -->
 
-        <div class="table-body">
-            <div class="table-row">
-                <label>Total :</label>
+<div class="group">
+
+    <div class="group-title">
+
+        <span class="green-dot"></span>
+
+        REKAP DEPOSIT QRIS
+
+    </div>
+
+
+    <div class="pga-table qris-table">
+
+
+        <!-- HEADER -->
+
+        <div class="pga-row pga-head">
+
+            <div>TANGGAL</div>
+
+            <div>KETERANGAN</div>
+
+            <div>TOTAL NOMINAL</div>
+
+            <div>TOTAL TRX</div>
+
+        </div>
+
+
+        <!-- PAYDIA -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                DEPO QRIS PAYDIA (PRN)
+            </div>
+
+            <div class="pga-input">
                 <input type="text" id="paydiaTotal">
             </div>
 
-            <div class="table-row">
-                <label>Trx :</label>
+            <div class="pga-input trx">
                 <input type="text" id="paydiaTrx">
             </div>
+
         </div>
-    </div>
 
-    <!-- NETZME -->
-    <div class="table-box">
-       <div class="table-title">
-    <span class="green-dot"></span>
-    NETZME
-</div>
 
-        <div class="table-body">
-            <div class="table-row">
-                <label>Total :</label>
+        <!-- NETZME -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                DEPO QRIS NETZME
+            </div>
+
+            <div class="pga-input">
                 <input type="text" id="netzmeTotal">
             </div>
 
-            <div class="table-row">
-                <label>Trx :</label>
+            <div class="pga-input trx">
                 <input type="text" id="netzmeTrx">
             </div>
+
         </div>
-    </div>
 
-    <!-- VANSON -->
-    <div class="table-box">
-        <div class="table-title">
-    <span class="green-dot"></span>
-    VANSON
-</div>
 
-        <div class="table-body">
-            <div class="table-row">
-                <label>Total :</label>
+        <!-- VANSON -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                DEPO QRIS VANSON
+            </div>
+
+            <div class="pga-input">
                 <input type="text" id="vansonTotal">
             </div>
 
-            <div class="table-row">
-                <label>Trx :</label>
+            <div class="pga-input trx">
                 <input type="text" id="vansonTrx">
             </div>
+
         </div>
-    </div>
 
-    <!-- INACASH -->
-    <div class="table-box">
-        <div class="table-title">
-    <span class="green-dot"></span>
-    INACASH
-</div>
 
-        <div class="table-body">
-            <div class="table-row">
-                <label>Total :</label>
+        <!-- INACASH -->
+
+        <div class="pga-row">
+
+            <div class="pga-date">
+                <span class="tgl"></span>
+            </div>
+
+            <div class="pga-name">
+                DEPO QRIS INACASH
+            </div>
+
+            <div class="pga-input">
                 <input type="text" id="inacashTotal">
             </div>
 
-            <div class="table-row">
-                <label>Trx :</label>
+            <div class="pga-input trx">
                 <input type="text" id="inacashTrx">
             </div>
+
         </div>
+
+    </div>
+
+
+    <div class="button-area">
+
+        <button
+            class="copy"
+            onclick="copyQris(this)"
+        >
+            📋 COPY
+        </button>
+
+        <button
+            class="reset"
+            onclick="resetQris()"
+        >
+            🗑 RESET
+        </button>
+
     </div>
 
 </div>
 
 
-<div class="button-area">
-
-<button class="copy" onclick="copyQris(this)">
-📋 COPY REKAP
-</button>
-
-<button class="reset" onclick="resetQris()">
-🗑 RESET
-</button>
-
-</div>
-
-</div>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <div class="footer">
+    © 2026 | BY YOGIK
+</div>
 
-© 2026 | BY YOGIK
 
 </div>
 
-</div>
 
 <script>
 
-let periodeCashback="";
-let periodeCashback2="";
+/* =========================================================
+   VARIABEL BONUS
+========================================================= */
 
-// ========================
-// FORMAT TANGGAL
-// ========================
+let periodeCashback = "";
+let periodeCashback2 = "";
+
+
+/* =========================================================
+   FORMAT TANGGAL
+========================================================= */
+
+function formatTanggalIndonesia(value){
+
+    if(!value) return "";
+
+    const bulan = [
+        "JANUARI",
+        "FEBRUARI",
+        "MARET",
+        "APRIL",
+        "MEI",
+        "JUNI",
+        "JULI",
+        "AGUSTUS",
+        "SEPTEMBER",
+        "OKTOBER",
+        "NOVEMBER",
+        "DESEMBER"
+    ];
+
+    const d = new Date(value + "T00:00:00");
+
+    return (
+        d.getDate() +
+        " " +
+        bulan[d.getMonth()] +
+        " " +
+        d.getFullYear()
+    );
+}
+
+
+/* =========================================================
+   UPDATE TANGGAL
+========================================================= */
 
 function updateTanggal(){
 
-    const value = document.getElementById("tanggal").value;
+    const input = document.getElementById("tanggal");
 
-    if(!value) return;
+    if(!input || !input.value) return;
 
-    const bulan=[
-        "JANUARI","FEBRUARI","MARET","APRIL",
-        "MEI","JUNI","JULI","AGUSTUS",
-        "SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"
-    ];
+    const hasil = formatTanggalIndonesia(input.value);
 
-    const d=new Date(value);
-
-    const hasil=
-    d.getDate()+" "+
-    bulan[d.getMonth()]+" "+
-    d.getFullYear();
-
-    document.querySelectorAll(".tgl").forEach(el=>{
-        el.textContent=hasil;
+    document.querySelectorAll(".tgl").forEach(el => {
+        el.textContent = hasil;
     });
 
 }
 
 
-// ========================
-// FORMAT SEMUA INPUT NOMINAL
-// ========================
+/* =========================================================
+   FORMAT SEMUA NOMINAL
+========================================================= */
 
-document.querySelectorAll("input[type='text']").forEach(input=>{
+document.addEventListener("DOMContentLoaded", function(){
 
-input.addEventListener("input",function(){
+    document
+    .querySelectorAll("input[type='text']")
+    .forEach(input => {
 
-let angka = this.value.replace(/\D/g,"");
+        input.addEventListener("input", function(){
 
-if(angka==""){
-    this.value="";
-    return;
-}
+            let angka = this.value.replace(/\D/g,"");
 
-this.value = parseInt(angka).toLocaleString("en-US");
+            if(angka === ""){
+                this.value = "";
+                return;
+            }
+
+            this.value =
+                parseInt(angka,10).toLocaleString("en-US");
+
+        });
+
+    });
 
 });
 
-});
 
-// ========================
-// COPY
-// ========================
-
-function tombolCopy(btn){
-
-btn.innerHTML="✅ COPIED";
-
-setTimeout(()=>{
-btn.innerHTML="📋 COPY REKAP";
-},2000);
-
-}
+/* =========================================================
+   COPY TEXT
+========================================================= */
 
 function copyText(text){
 
-    const textarea = document.createElement("textarea");
+    if(!text) return;
 
-    textarea.value = text;
+    if(navigator.clipboard){
 
-    document.body.appendChild(textarea);
+        navigator.clipboard.writeText(text);
 
-    textarea.select();
+    }else{
 
-    document.execCommand("copy");
+        const textarea =
+            document.createElement("textarea");
 
-    textarea.remove();
+        textarea.value = text;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand("copy");
+
+        textarea.remove();
+
+    }
 
 }
 
-// COPY REKAP TANGGAL
+
+/* =========================================================
+   ANIMASI TOMBOL COPY
+========================================================= */
+
+function tombolCopy(btn){
+
+    const original = btn.innerHTML;
+
+    btn.innerHTML = "✅ COPIED";
+
+    setTimeout(() => {
+
+        btn.innerHTML = original;
+
+    },2000);
+
+}
+
+
+/* =========================================================
+   COPY REKAP UTAMA
+========================================================= */
 
 function copyRekap1(btn){
 
-let txt="";
+    let txt = "";
 
-const member = document.getElementById("member");
-const turnover = document.getElementById("turnover");
-const reportDepo = document.getElementById("reportDepo");
-const reportWd = document.getElementById("reportWd");
-const regis = document.getElementById("regis");
-const regDepo = document.getElementById("regDepo");
-const trxDepo = document.getElementById("trxDepo");
-const trxWd = document.getElementById("trxWd");
-const totalTrx = document.getElementById("totalTrx");
-const bonusHarian = document.getElementById("bonusHarian");
-
-const jenisBonus = document.getElementById("jenisBonus");
-const cashback = document.getElementById("cashback");
-
-const jenisBonus2 = document.getElementById("jenisBonus2");
-const cashback2 = document.getElementById("cashback2");
-
-// HEADER TANGGAL
-let tanggalText = document.querySelector(".tgl").innerText;
+    const tanggal =
+        document.querySelector(".tgl")?.innerText || "";
 
 
-// DATA UTAMA
+    const memberAktif =
+        document.getElementById("memberAktif").value;
 
-let utama = "";
+    const turnover =
+        document.getElementById("turnover").value;
 
+    const reportDepo =
+        document.getElementById("reportDepo").value;
 
-if(member.value){
-utama += `MEMBER AKTIF : ${member.value}\n`;
-}
+    const reportWd =
+        document.getElementById("reportWd").value;
 
-if(turnover.value){
-utama += `TURNOVER : ${turnover.value}\n`;
-}
+    const regis =
+        document.getElementById("regis").value;
 
-if(reportDepo.value){
-utama += `REPORT DEPO : ${reportDepo.value}\n`;
-}
+    const regDepo =
+        document.getElementById("regDepo").value;
 
-if(reportWd.value){
-utama += `REPORT WD : ${reportWd.value}\n`;
-}
+    const trxDepo =
+        document.getElementById("trxDepo").value;
 
-if(regis.value){
-utama += `REGIS : ${regis.value}\n`;
-}
+    const trxWd =
+        document.getElementById("trxWd").value;
 
-if(regDepo.value){
-utama += `REG DEPO : ${regDepo.value}\n`;
-}
+    const totalTrx =
+        document.getElementById("totalTrx").value;
 
-if(trxDepo.value){
-    utama += `TRX DEPO : ${trxDepo.value}\n`;
-}
-
-if(trxWd.value){
-    utama += `TRX WD : ${trxWd.value}\n`;
-}
-
-if(totalTrx.value){
-    utama += `TOTAL TRX : ${totalTrx.value}\n`;
-}
-
-if(bonusHarian.value){
-utama += `BONUS HARIAN : ${bonusHarian.value}\n`;
-}
+    const bonusHarian =
+        document.getElementById("bonusHarian").value;
 
 
-if(utama){
+    let utama = "";
 
-txt += `
-REKAP TANGGAL ${tanggalText}
+
+    if(memberAktif)
+        utama += `MEMBER AKTIF : ${memberAktif}\n`;
+
+    if(turnover)
+        utama += `TURNOVER : ${turnover}\n`;
+
+    if(reportDepo)
+        utama += `REPORT DEPO : ${reportDepo}\n`;
+
+    if(reportWd)
+        utama += `REPORT WD : ${reportWd}\n`;
+
+    if(regis)
+        utama += `REGIS : ${regis}\n`;
+
+    if(regDepo)
+        utama += `REG DEPO : ${regDepo}\n`;
+
+    if(trxDepo)
+        utama += `TRX DEPO : ${trxDepo}\n`;
+
+    if(trxWd)
+        utama += `TRX WD : ${trxWd}\n`;
+
+    if(totalTrx)
+        utama += `TOTAL TRX : ${totalTrx}\n`;
+
+    if(bonusHarian)
+        utama += `BONUS HARIAN : ${bonusHarian}\n`;
+
+
+    if(utama){
+
+        txt +=
+`REKAP TANGGAL ${tanggal}
 
 ${utama}`;
 
+    }
+
+
+    /* BONUS 1 */
+
+    const jenisBonus =
+        document.getElementById("jenisBonus").value;
+
+    const cashback =
+        document.getElementById("cashback").value;
+
+
+    if(jenisBonus || cashback){
+
+        txt += `\n${jenisBonus}`;
+
+        if(periodeCashback){
+
+            txt +=
+                ` PERIODE ${periodeCashback}`;
+
+        }
+
+        if(cashback){
+
+            txt +=
+                ` : ${cashback}`;
+
+        }
+
+    }
+
+
+    /* BONUS 2 */
+
+    const jenisBonus2 =
+        document.getElementById("jenisBonus2").value;
+
+    const cashback2 =
+        document.getElementById("cashback2").value;
+
+
+    if(jenisBonus2 || cashback2){
+
+        txt += `\n${jenisBonus2}`;
+
+        if(periodeCashback2){
+
+            txt +=
+                ` PERIODE ${periodeCashback2}`;
+
+        }
+
+        if(cashback2){
+
+            txt +=
+                ` : ${cashback2}`;
+
+        }
+
+    }
+
+
+    copyText(txt.trim());
+
+    tombolCopy(btn);
+
 }
 
 
-// BONUS MINGGUAN 1
-
-if(jenisBonus.value || cashback.value){
-
-txt += `\n${jenisBonus.value}`;
-
-if(periodeCashback){
-txt += ` PERIODE ${periodeCashback}`;
-}
-
-if(cashback.value){
-txt += ` : ${cashback.value}`;
-}
-
-}
-
-
-// BONUS MINGGUAN 2
-
-if(jenisBonus2.value || cashback2.value){
-
-txt += `\n${jenisBonus2.value}`;
-
-if(periodeCashback2){
-txt += ` PERIODE ${periodeCashback2}`;
-}
-
-if(cashback2.value){
-txt += ` : ${cashback2.value}`;
-}
-
-}
-
-navigator.clipboard.writeText(txt.trim());
-
-tombolCopy(btn);
-
-}
-
-// COPY PGA
+/* =========================================================
+   COPY PGA
+========================================================= */
 
 function copyPga(btn){
 
@@ -1224,16 +2151,18 @@ copyText(txt.trim());
 tombolCopy(btn);
 }
 
-// COPY QRIS
+/* =========================================================
+   COPY QRIS
+========================================================= */
 
 function copyQris(btn){
 
 let txt="";
 
 
-// PAYDIA
+    /* PAYDIA */
 
-if(paydiaTotal.value || paydiaTrx.value){
+    if(paydiaTotal.value || paydiaTrx.value){
 
 txt += `
 DEPO QRIS PAYDIA (PRN) TANGGAL ${document.querySelector(".tgl").innerText}
@@ -1253,10 +2182,9 @@ txt += "\n\n";
 
 }
 
+    /* NETZME */
 
-// NETZME
-
-if(netzmeTotal.value || netzmeTrx.value){
+    if(netzmeTotal.value || netzmeTrx.value){
 
 txt += `
 DEPO QRIS NETZME TANGGAL ${document.querySelector(".tgl").innerText}
@@ -1276,10 +2204,9 @@ txt += "\n\n";
 
 }
 
+    /* VANSON */
 
-// VANSON
-
-if(vansonTotal.value || vansonTrx.value){
+    if(vansonTotal.value || vansonTrx.value){
 
 txt += `
 DEPO QRIS VANSON TANGGAL ${document.querySelector(".tgl").innerText}
@@ -1299,10 +2226,9 @@ txt += "\n\n";
 
 }
 
+    /* INACASH */
 
-// INACASH
-
-if(inacashTotal.value || inacashTrx.value){
+    if(inacashTotal.value || inacashTrx.value){
 
 txt += `
 DEPO QRIS INACASH TANGGAL ${document.querySelector(".tgl").innerText}
@@ -1327,142 +2253,196 @@ tombolCopy(btn);
 
 }
 
-// ========================
-// RESET
-// ========================
 
-// ========================
-// RESET REKAP
-// ========================
+/* =========================================================
+   RESET REKAP UTAMA
+========================================================= */
 
 function resetRekap(){
 
-document.getElementById("member").value="";
-document.getElementById("turnover").value="";
-document.getElementById("reportDepo").value="";
-document.getElementById("reportWd").value="";
-document.getElementById("regis").value="";
-document.getElementById("regDepo").value="";
-document.getElementById("trxDepo").value="";
-document.getElementById("trxWd").value="";
-document.getElementById("totalTrx").value="";
-document.getElementById("bonusHarian").value="";
+    const ids = [
 
-document.getElementById("jenisBonus").selectedIndex=0;
-document.getElementById("cashbackAwal").value="";
-document.getElementById("cashbackAkhir").value="";
-document.getElementById("cashback").value="";
+        "memberAktif",
+        "turnover",
+        "reportDepo",
+        "reportWd",
+        "regis",
+        "regDepo",
+        "trxDepo",
+        "trxWd",
+        "totalTrx",
+        "bonusHarian",
 
-document.getElementById("jenisBonus2").selectedIndex=0;
-document.getElementById("cashbackAwal2").value="";
-document.getElementById("cashbackAkhir2").value="";
-document.getElementById("cashback2").value="";
+        "cashbackAwal",
+        "cashbackAkhir",
+        "cashback",
 
-periodeCashback="";
-periodeCashback2="";
+        "cashbackAwal2",
+        "cashbackAkhir2",
+        "cashback2"
+
+    ];
+
+
+    ids.forEach(id => {
+
+        const el =
+            document.getElementById(id);
+
+        if(el)
+            el.value = "";
+
+    });
+
+
+    document.getElementById("jenisBonus").selectedIndex = 0;
+
+    document.getElementById("jenisBonus2").selectedIndex = 0;
+
+
+    periodeCashback = "";
+
+    periodeCashback2 = "";
 
 }
 
-// ========================
-// RESET PGA
-// ========================
+
+/* =========================================================
+   RESET PGA
+========================================================= */
 
 function resetPga(){
 
-depoPgaTotal.value="";
-depoPgaTrx.value="";
+    document.getElementById("depoPgaTotal").value = "";
 
-wdPgaTotal.value="";
-wdPgaTrx.value="";
+    document.getElementById("depoPgaTrx").value = "";
 
-cairTotal.value="";
-cairTrx.value="";
+    document.getElementById("wdPgaTotal").value = "";
+
+    document.getElementById("wdPgaTrx").value = "";
+
+    document.getElementById("cairTotal").value = "";
+
+    document.getElementById("cairTrx").value = "";
 
 }
 
 
-// ========================
-// RESET QRIS
-// ========================
+/* =========================================================
+   RESET QRIS
+========================================================= */
 
 function resetQris(){
 
-paydiaTotal.value="";
-paydiaTrx.value="";
+    document.getElementById("paydiaTotal").value = "";
 
-netzmeTotal.value="";
-netzmeTrx.value="";
+    document.getElementById("paydiaTrx").value = "";
 
-vansonTotal.value="";
-vansonTrx.value="";
+    document.getElementById("netzmeTotal").value = "";
 
-inacashTotal.value="";
-inacashTrx.value="";
+    document.getElementById("netzmeTrx").value = "";
 
-}
+    document.getElementById("vansonTotal").value = "";
 
-// ========================
-// DEFAULT TANGGAL HARI INI
-// ========================
+    document.getElementById("vansonTrx").value = "";
 
-window.onload=function(){
+    document.getElementById("inacashTotal").value = "";
 
-const today=new Date().toISOString().split("T")[0];
-
-document.getElementById("tanggal").value=today;
-
-updateTanggal();
+    document.getElementById("inacashTrx").value = "";
 
 }
 
 
-function formatTanggalIndonesia(value){
-
-    if(!value) return "";
-
-    const bulan=[
-        "JANUARI","FEBRUARI","MARET","APRIL",
-        "MEI","JUNI","JULI","AGUSTUS",
-        "SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"
-    ];
-
-    const d=new Date(value);
-
-    return d.getDate()+" "+bulan[d.getMonth()]+" "+d.getFullYear();
-
-}
+/* =========================================================
+   UPDATE PERIODE BONUS 1
+========================================================= */
 
 function updatePeriode(){
 
-    const awal=document.getElementById("cashbackAwal").value;
-    const akhir=document.getElementById("cashbackAkhir").value;
+    const awal =
+        document.getElementById("cashbackAwal").value;
+
+    const akhir =
+        document.getElementById("cashbackAkhir").value;
+
 
     if(awal && akhir){
 
-        periodeCashback=
-            formatTanggalIndonesia(awal)+
-            " - "+
+        periodeCashback =
+            formatTanggalIndonesia(awal) +
+            " - " +
             formatTanggalIndonesia(akhir);
+
+    }else{
+
+        periodeCashback = "";
 
     }
 
 }
 
+
+/* =========================================================
+   UPDATE PERIODE BONUS 2
+========================================================= */
+
 function updatePeriode2(){
 
-    const awal=document.getElementById("cashbackAwal2").value;
-    const akhir=document.getElementById("cashbackAkhir2").value;
+    const awal =
+        document.getElementById("cashbackAwal2").value;
+
+    const akhir =
+        document.getElementById("cashbackAkhir2").value;
+
 
     if(awal && akhir){
 
         periodeCashback2 =
-            formatTanggalIndonesia(awal)+
-            " - "+
+            formatTanggalIndonesia(awal) +
+            " - " +
             formatTanggalIndonesia(akhir);
+
+    }else{
+
+        periodeCashback2 = "";
 
     }
 
 }
+
+
+/* =========================================================
+   LOAD
+========================================================= */
+
+window.addEventListener("DOMContentLoaded",function(){
+
+    const today =
+        new Date();
+
+    const yyyy =
+        today.getFullYear();
+
+    const mm =
+        String(today.getMonth()+1)
+        .padStart(2,"0");
+
+    const dd =
+        String(today.getDate())
+        .padStart(2,"0");
+
+
+    const tanggal =
+        `${yyyy}-${mm}-${dd}`;
+
+
+    document.getElementById("tanggal").value =
+        tanggal;
+
+
+    updateTanggal();
+
+});
 
 </script>
 
